@@ -241,11 +241,13 @@ figcaption.caption {
   }
 }
 
+/* FIX 1: Google button now visually secondary (outlined) so the yellow
+   button reads as the primary CTA */
 .google-btn {
   align-items: center;
-  background: #fff;
-  border: 3px solid #ffffff;
-  color: #000;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
   display: inline-flex;
   font-family: var(--font-family-sans-serif);
   font-size: 1rem;
@@ -256,20 +258,20 @@ figcaption.caption {
 }
 .google-btn:hover,
 .google-btn:focus {
-  background: #000;
+  background: rgba(255, 255, 255, 0.1);
   border-color: #ffffff;
   color: #fff;
 }
 
 .light-palette .google-btn {
-  background: #000;
-  border-color: #000000;
-  color: #fff;
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.4);
+  color: #000;
 }
 
 .light-palette .google-btn:hover,
 .light-palette .google-btn:focus {
-  background: #ffffff;
+  background: rgba(0, 0, 0, 0.05);
   border-color: #000000;
   color: #000000;
   text-decoration: none;
@@ -314,6 +316,7 @@ figcaption.caption {
   text-decoration: none;
 }
 
+/* FIX 2: Replace dated dashed divider with a clean solid line */
 .cta-divider {
   display: flex;
   align-items: center;
@@ -328,8 +331,9 @@ figcaption.caption {
 .cta-divider-line {
   height: 1px;
   background: none;
-  border-top: 1px dashed var(--gray-45);
+  border-top: 1px solid var(--gray-45);
   flex: 1 1 auto;
+  opacity: 0.4;
 }
 
 @media (min-width: 500px) {
